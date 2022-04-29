@@ -1,36 +1,36 @@
 from configparser import ConfigParser 
 
-def getHostUrl():
+def get_host_url():
     config = ConfigParser()
     config.read('config.ini') 
     
     return config['host']['URL']
 
-def getHostUserName():
+def get_host_user_name():
     config = ConfigParser()
     config.read('config.ini') 
     
     return config['host']['UserName']
 
-def getHostPassword():
+def get_host_password():
     config = ConfigParser()
     config.read('config.ini') 
     
     return config['host']['Password']
 
-def getCurrentHSMVersion():
+def get_current_hsm_version():
     config = ConfigParser()
     config.read('config.ini')
 
     return config['DEFAULT']['CurrentHSMVersion']
 
-def getCurrentGCEVersion():
+def get_current_gce_version():
     config = ConfigParser() 
     config.read('config.ini')
 
     return config['DEFAULT']['CurrentGCEVersion'] 
 
-def saveConfigToDefault(newConfigValues):
+def save_config_to_default(newConfigValues):
     config = ConfigParser()
     config.read('config.ini') 
 
