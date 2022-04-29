@@ -30,14 +30,11 @@ def get_current_gce_version():
 
     return config['DEFAULT']['CurrentGCEVersion'] 
 
-def save_config_to_default(newConfigValues):
+def write_value_to_default(key, value):
     config = ConfigParser()
     config.read('config.ini') 
 
-    if 'CurrentGCEVersion' in newConfigValues:
-        config['DEFAULT']['CurrentGCEVersion'] = newConfigValues['CurrentGCEVersion']
-    if 'CurrentHSMVersion' in newConfigValues:
-        config['DEFAULT']['CurrentHSMVersion'] = newConfigValues['CurrentHSMVersion']
-
-    config.write('config.ini')
+    config['DEFAULT'][key] = value 
+    with open('config.ini', 'w') as configfile:
+        config.write(configfile)
 
